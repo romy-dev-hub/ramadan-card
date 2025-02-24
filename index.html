@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ramadan card</title>
+    <link rel="stylesheet" href="index.css"
+</head>
+<body>
+
+
+    <div class="stars" id="stars"></div>
+    
+    
+    <div class="lanterns-container">
+    <!-- existing lanterns -->
+    <div class="lantern" style="left: 5%; top: 10%; animation-delay: 0.5s">🏮</div>
+    <div class="lantern" style="right: 8%; top: 25%; animation-delay: 1.2s">🪔</div>
+    <div class="lantern" style="left: 15%; bottom: 20%; animation-duration: 5s">🌙</div>
+    <div class="lantern" style="right: 20%; bottom: 15%; font-size: 1.8em">🪔</div>
+    <div class="lantern" style="left: 30%; top: 40%; animation-duration: 4.5s">🏮</div>
+    <div class="lantern" style="right: 35%; top: 60%; opacity: 0.9">🌟</div>
+    <div class="lantern" style="left: 45%; top: 15%; font-size: 2.2em">🌙</div>
+    <div class="lantern" style="right: 5%; bottom: 25%; animation-delay: 2s">🌙</div>
+</div>
+
+    <div class="container">
+        <div class="input-form">
+            <h2 style="color: white;">Enter Your Name</h2>
+            <input type="text" id="nameInput" placeholder="Your Name">
+            <button onclick="showCard()">Show Card</button>
+        </div>
+
+        <div class="card">
+            <div class="crescent"></div>
+            <div class="stars" id="stars"></div>
+            <h1>Ramadan Kareem, <span id="userName"></span>!</h1>
+            <p>May this holy month bring you peace, prosperity, and spiritual growth.<br>
+            Wishing you and your family abundant blessings and happiness.<br>
+            Ramadan Mubarak!</p>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+body {
+    background: linear-gradient(45deg, #0a2a43, #1b4b5a);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.stars {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    background: rgba(255, 215, 0, 0.8);
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite, float 6s infinite;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+.input-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 1s ease;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    background: #ffd700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    display: none;
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    animation: cardAppear 1s ease;
+}
+
+.crescent {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: #ffd700;
+    border-radius: 50%;
+    box-shadow: 0 0 30px #ffd700;
+}
+
+.crescent::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    width: 90px;
+    height: 90px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite;
+}
+
+h1 {
+    color: #0a2a43;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardAppear {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes scale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+ 
+.lantern {
+    position: fixed;
+    font-size: 2em;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 0;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.lantern:hover {
+    transform: scale(1.2) rotate(15deg);
+    cursor: pointer;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-25px) rotate(5deg); }
+}
+
+ /* responsive on phones too */
+    
+@media (max-width: 768px) {
+    body {
+        overflow: auto;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .input-form {
+        padding: 1.5rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .input-form h2 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        width: 80%;
+        font-size: 1rem;
+        margin: 10px 0;
+    }
+
+    button {
+        width: 50%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .card {
+        width: 90%;
+        padding: 2rem;
+        margin: 20px auto;
+    }
+
+    .card h1 {
+        font-size: 1.8rem;
+        margin-top: 1.5rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .crescent {
+        width: 70px;
+        height: 70px;
+        top: -35px;
+    }
+
+    .crescent::before {
+        width: 60px;
+        height: 60px;
+        left: -15px;
+    }
+
+    .lantern {
+        font-size: 1.5em !important;
+        animation-duration: 5s !important;
+    }
+
+    /* Adjust lantern positions for mobile */
+    .lantern:nth-child(1) { left: 5% !important; top: 5% !important; }
+    .lantern:nth-child(2) { right: 5% !important; top: 10% !important; }
+    .lantern:nth-child(3) { display: none; } /* Hide some lanterns */
+    .lantern:nth-child(4) { right: 10% !important; bottom: 5% !important; }
+    .lantern:nth-child(5) { left: 10% !important; bottom: 10% !important; }
+}
+
+@media (max-width: 480px) {
+    .stars {
+        display: none; /* Improve performance on very small devices */
+    }
+
+    .input-form {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .card h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        width: 60%;
+    }
+
+    .lantern {
+        font-size: 1.2em !important;
+    }
+
+    .star {
+        width: 1px !important;
+        height: 1px !important;
+        background: rgba(255, 215, 0, 0.7) !important;
+    }
+}
+
