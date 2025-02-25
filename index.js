@@ -3,7 +3,7 @@ function createStars() {
     starsContainer.innerHTML = '';
     
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const starCount = isMobile ? 60 : 200; // Reduced mobile count
+    const starCount = isMobile ? 100 : 200; // Reduced mobile count
     
     for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
@@ -19,30 +19,22 @@ function createStars() {
             star.style.width = size + 'px';
             star.style.height = size + 'px';
         }
-        
+        /*
         star.style.left = Math.random() * 100 + '%';
         star.style.top = Math.random() * 100 + '%';
         star.style.animationDelay = Math.random() * 2 + 's';
         starsContainer.appendChild(star);
-    }
-}
-
-/*
-function createStars() {
-    const starsContainer = document.getElementById('stars');
-    for (let i = 0; i < 200; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        const size = Math.random() * 3 + 1;
+        */
+        const size = isMobile ? Math.random() * 2 + 1 : Math.random() * 3 + 1;
         star.style.width = size + 'px';
         star.style.height = size + 'px';
+    
         star.style.left = Math.random() * 100 + '%';
         star.style.top = Math.random() * 100 + '%';
         star.style.animationDelay = Math.random() * 2 + 's';
         starsContainer.appendChild(star);
     }
 }
-*/
 
 window.onload = createStars;
 

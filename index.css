@@ -169,6 +169,11 @@ p {
  /* responsive on phones too */
     
 @media (max-width: 768px) {
+
+    .stars {
+        display: block; /* Show stars on small screens */
+    }
+
     body {
         overflow: auto;
         padding: 20px;
@@ -244,7 +249,7 @@ p {
 
 @media (max-width: 480px) {
     .stars {
-        display: none; /* Improve performance on very small devices */
+        display: block; /* Show stars on small screens */
     }
 
     .input-form {
